@@ -1,0 +1,27 @@
+// Import Bootstrap and App variables and mixins
+@import "../../../../../assets/scss/inner-imports";
+
+
+.widget-pie {
+  @include clearfix();
+  background-color: $red;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.widget-pie__item {
+  padding: 20px 0;
+  text-align: center;
+  width: 33.33333%;
+
+  &:nth-child(2n) {
+    background-color: rgba($white, 0.1);
+  }
+
+  @include media-breakpoint-down(xs) {
+    width: 50%;
+  }
+}
+
+.widget-pie__title {
+  color: $white;
+}

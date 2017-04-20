@@ -1,0 +1,72 @@
+$accordion-shade: #f3f3f3;
+
+.accordion {
+  .card {
+    box-shadow: none;
+    margin: 0 0 1px;
+  }
+
+  .card-header {
+    padding: 0.9rem 0 0.9rem 2.2rem;
+    box-shadow: 0 1px 0 0 $accordion-shade;
+    @include transition(box-shadow 300ms);
+
+    &:before,
+    &:after {
+      font-family: $font-family-icon;
+      position: absolute;
+      font-size: 1.2rem;
+      left: 0.2rem;
+      top: 0.8rem;
+      @include transition(opacity 300ms, transform 300ms);
+    }
+
+    &:before {
+      content: '\f278';
+    }
+
+    &:after {
+      content: '\f273';
+      @include opacity(0);
+      @include scale(0);
+    }
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $headings-color;
+  }
+
+  .card-block {
+    padding: 2rem 2.2rem;
+  }
+
+  .panel-open {
+    .card-header {
+      &:before {
+        @include opacity(0);
+        @include scale(0);
+      }
+
+      &:after {
+        @include opacity(1);
+        @include scale(1);
+      }
+    }
+
+    .card-block {
+      background-color: $accordion-shade;
+      @include animate(fadeIn, 500ms);
+    }
+  }
+
+  [ng-reflect-is-disabled="true"] {
+    .card-header {
+      &:before,
+      &:after {
+        @include opacity(0.5);
+      }
+    }
+  }
+}

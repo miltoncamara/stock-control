@@ -1,0 +1,168 @@
+// CSS Animations based on animate.css
+@mixin animate($name, $duration) {
+  -webkit-animation-name: $name;
+  animation-name: $name;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+// Translate3d
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+
+// Rotate
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -ms-transform: rotate($degrees); // IE9 only
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
+// Scale
+@mixin scale($ratio) {
+  -webkit-transform: scale($ratio);
+  -ms-transform: scale($ratio); // IE9 only
+  -o-transform: scale($ratio);
+  transform: scale($ratio);
+}
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+// Transform Origin
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin; // IE9 only
+  transform-origin: $origin;
+}
+
+// User Select
+@mixin user-select($value) {
+  -webkit-touch-callout: $value;
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
+}
+
+// Transition Timing Function
+@mixin transition-timing-function($timing-function) {
+  -webkit-transition-timing-function: $timing-function;
+  transition-timing-function: $timing-function;
+}
+
+// Appearance
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
+
+//  Select BG
+@mixin select-bg() {
+  &:before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    right: 0;
+    bottom: 3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 10px 10px;
+    border-color: transparent transparent #d1d1d1 transparent;
+  }
+}
+
+// Animation
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+
+// Custom non bootstrap button mixins to perform style overrides.
+// Please note that material admin does not loads bootstrap's default buttons mixins
+
+// Button variants
+@mixin button-variant($color, $background, $border) {
+  $active-background: darken($background, 5%);
+  $active-border: darken($border, 3%);
+
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  @include hover {
+    color: $color;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &.disabled,
+  &:disabled {
+    background-color: $background;
+    border-color: $border;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $color;
+    background-color: $active-background;
+    background-image: none; // Remove the gradient for the pressed/active state
+    border-color: $active-border;
+    @include box-shadow($btn-active-box-shadow);
+  }
+}
+
+@mixin button-outline-variant($color, $color-hover: #fff) {
+  color: $color;
+  background-image: none;
+  background-color: transparent;
+  border-color: $color;
+
+  @include hover {
+    color: $color-hover;
+    background-color: $color;
+    border-color: $color;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 2px rgba($color, .5);
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $color-hover;
+    background-color: $color;
+    border-color: $color;
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  @include border-radius($border-radius);
+}

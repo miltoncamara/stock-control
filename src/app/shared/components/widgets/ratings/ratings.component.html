@@ -1,0 +1,25 @@
+<div class="card widget-ratings">
+  <div class="card-header text-xs-center">
+    <h2 class="card-title">Average Rating 3.0</h2>
+
+    <div class="widget-ratings__star">
+      <i class="zmdi zmdi-star active"></i>
+      <i class="zmdi zmdi-star active"></i>
+      <i class="zmdi zmdi-star active"></i>
+      <i class="zmdi zmdi-star"></i>
+      <i class="zmdi zmdi-star"></i>
+    </div>
+  </div>
+
+  <div class="card-block">
+
+    <div *ngFor="let ratingData of ratingsData" class="widget-ratings__item">
+      <div class="float-left">{{ ratingData.stars }} <i class="zmdi zmdi-star"></i></div>
+      <div class="float-right">{{ ratingData.votes }}</div>
+
+      <div class="widget-ratings__progress">
+        <progress class="progress progress-warning" [value]="ratingData.votes" max="100"></progress>
+      </div>
+    </div>
+  </div>
+</div>

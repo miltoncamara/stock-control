@@ -1,0 +1,94 @@
+<header class="header">
+    <navigation-trigger></navigation-trigger>
+
+    <div class="header__logo hidden-sm-down">
+        <h1><a [routerLink]="['']">SG - Controle de Estoque</a></h1>
+    </div>
+
+    <ul class="header__nav">
+        <li><a [routerLink]="['']" (click)="search.searchStatus = true"><i class="zmdi zmdi-search"></i></a></li>
+
+        <li dropdown>
+            <a href="" dropdownToggle><i class="zmdi zmdi-email"></i></a>
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
+                <div class="listview listview--hover">
+                    <div class="listview__header">Messages</div>
+
+                    <a *ngFor="let message of messagesData" href="" class="listview__item">
+                        <img [src]="message.image" class="listview__img" alt="">
+
+                        <div class="listview__content">
+                            <h3 class="listview__heading">{{ message.name }}</h3>
+                            <p>{{ message.message }}</p>
+                        </div>
+                    </a>
+
+                    <a href="" class="view-more">See All Messages</a>
+                </div>
+            </div>
+        </li>
+
+        <li dropdown>
+            <a href="" dropdownToggle><i class="zmdi zmdi-notifications"></i></a>
+
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
+                <div class="listview listview--hover">
+                    <div class="listview__header">Messages</div>
+
+                    <a *ngFor="let message of messagesData" href="" class="listview__item">
+                        <img [src]="message.image" class="listview__img" alt="">
+
+                        <div class="listview__content">
+                            <h3 class="listview__heading">{{ message.name }}</h3>
+                            <p>{{ message.message }}</p>
+                        </div>
+                    </a>
+
+                    <a href="" class="view-more">See All Notifications</a>
+                </div>
+            </div>
+        </li>
+
+        <li dropdown class="hidden-xs-down">
+            <a href="" dropdownToggle=""><i class="zmdi zmdi-view-headline"></i></a>
+
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
+                <div class="listview listview--hover">
+                    <div class="listview__header">Tasks</div>
+
+                    <a *ngFor="let task of tasksData" href="" class="listview__item">
+                        <div class="progress">
+                            <div [ngClass]="['progress-bar bg-'+ task.color]" [ngStyle]="{ 'width': task.completed+'%' }" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </a>
+
+                    <a href="" class="view-more">View All Tasks</a>
+                </div>
+            </div>
+        </li>
+
+        <li dropdown class="hidden-xs-down">
+            <a dropdownToggle=""><i class="zmdi zmdi-more-vert"></i></a>
+
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-menu--icon" role="menu">
+                <a href="" class="dropdown-item"><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a>
+                <a href="" class="dropdown-item"><i class="zmdi zmdi-delete"></i> Clear Local Storage</a>
+                <a href="" class="dropdown-item"><i class="zmdi zmdi-face"></i> Privacy Settings</a>
+                <a href="" class="dropdown-item"><i class="zmdi zmdi-settings"></i> Other Settings</a>
+            </div>
+        </li>
+
+        <li dropdown class="header__nav__profile">
+            <img dropdownToggle src="./assets/demo/img/profile-pics/1.jpg" alt="">
+
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-menu--icon" role="menu">
+                <a href="" class="dropdown-item"><i class="zmdi zmdi-account"></i> View Profile</a>
+                <a href="" class="dropdown-item"><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
+                <a href="" class="dropdown-item"><i class="zmdi zmdi-settings"></i> Settings</a>
+                <a href="" class="dropdown-item"><i class="zmdi zmdi-time-restore"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+
+    <header-search #search></header-search>
+</header>

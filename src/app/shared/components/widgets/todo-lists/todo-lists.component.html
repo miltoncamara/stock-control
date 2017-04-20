@@ -1,0 +1,26 @@
+<div class="card card-inverse widget-todo">
+    <div class="card-header">
+        <h2 class="card-title">Todo lists</h2>
+        <small class="card-subtitle">Venenatis portauam Inceptos ameteiam</small>
+    </div>
+
+    <div class="listview listview--dark">
+        <div *ngFor="let todoListData of todoListData" class="listview__item">
+            <label class="custom-control custom-control--light custom-control--char widget-todo__item">
+                <input class="custom-control-input" type="checkbox" value="" checked="{{ todoListData.checked }}">
+                <span class="custom-control--char__helper"><i>{{ todoListData.letter }}</i></span>
+                <div class="widget-todo__info">
+                    <span>{{ todoListData.todo }}</span>
+                    <small>{{ todoListData.venue }}</small>
+                </div>
+
+                <div class="listview__attrs">
+                    <span>{{ todoListData.category }}</span>
+                    <span>{{ todoListData.priority }}</span>
+                </div>
+            </label>
+        </div>
+
+        <a href="" class="view-more view-more--light">View More</a>
+    </div>
+</div>

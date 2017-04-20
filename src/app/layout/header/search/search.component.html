@@ -1,0 +1,6 @@
+<div class="search" [class.search--toggled]="searchStatus">
+  <div class="search__inner">
+    <i class="zmdi zmdi-arrow-back search__close" (click)="closeSearch()"></i>
+    <input type="text" placeholder="Search..." [(ngModel)]="searchValue">
+  </div>
+</div>

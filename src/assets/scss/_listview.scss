@@ -1,0 +1,86 @@
+.listview__item {
+  display: flex;
+  padding: 15px $card-spacer-x;
+  @include transition(background-color 300ms);
+}
+
+.listview__img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: top;
+  margin: -1px 18px 0 -2px;
+}
+
+.listview__content {
+  flex: 1;
+  min-width: 0;
+
+  & > p {
+    @include text-truncate();
+    color: lighten($body-color, 10%);
+    margin-bottom: 0;
+  }
+}
+
+.listview__heading {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.listview__attrs {
+  flex: 1 100%;
+  margin-top: 5px;
+
+  & > span {
+    padding: 0.45rem 0.7rem 0.5rem;
+    border: 1px solid lighten($grey, 30%);
+    display: inline-block;
+    line-height: 100%;
+    font-size: 1rem;
+    margin: 0 0.05rem 0.05rem 0;
+    background-color: $white;
+  }
+}
+
+.listview__header {
+  color: $headings-color;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.7rem 1rem 0.9rem;
+  border-bottom: 1px solid $border-light;
+  margin-bottom: 0.75rem;
+}
+
+// Listview modifier classes
+.listview {
+  &:not(.listview--dark) {
+
+    &.listview--hover {
+      .listview__item:hover {
+        background-color: rgba($black, 0.025);
+      }
+    }
+
+    &.listview--striped {
+      .listview__item:nth-child(even) {
+        background-color: rgba($black, 0.025);
+      }
+    }
+  }
+}
+
+.listview--dark {
+  &.listview--striped {
+    .listview__item:nth-child(even) {
+      background-color: rgba($white, 0.1);
+    }
+  }
+
+  .listview__attrs {
+    & > span {
+      border-color: rgba($white, 0.7);
+      background-color: transparent;
+    }
+  }
+}

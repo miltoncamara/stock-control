@@ -1,0 +1,99 @@
+<section class="content">
+  <header class="content__title">
+    <h1>Alerts</h1>
+    <small>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</small>
+
+    <div class="actions">
+      <a class="actions__item zmdi zmdi-trending-up" [routerLink]="['/user-interface/alerts']"></a>
+      <a class="actions__item zmdi zmdi-check-all" [routerLink]="['/user-interface/alerts']"></a>
+      <div dropdown>
+        <i dropdownToggle class="actions__item zmdi zmdi-more-vert"></i>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right">
+          <a [routerLink]="['/user-interface/alerts']" class="dropdown-item">Refresh</a>
+          <a [routerLink]="['/user-interface/alerts']" class="dropdown-item">Manage Widgets</a>
+          <a [routerLink]="['/user-interface/alerts']" class="dropdown-item">Settings</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Basic examples</h2>
+      <small class="card-subtitle">Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., <code>.alert-success</code>)</small>
+    </div>
+
+    <div class="card-block">
+      <alert type="success">
+        Well done! You successfully read this important alert message.
+      </alert>
+      <alert type="info">
+        Heads up! This alert needs your attention, but it's not super important.
+      </alert>
+      <alert type="warning">
+        Warning! Better check yourself, you're not looking too good.
+      </alert>
+      <alert type="danger">
+        Oh snap! Change a few things up and try submitting again.
+      </alert>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Link color</h2>
+      <small class="card-subtitle">Use the <code>.alert-link</code> utility class to quickly provide matching colored links within any alert.</small>
+    </div>
+
+    <div class="card-block">
+      <alert type="success">
+        Well done! You successfully read <a href="#" class="alert-link">this important alert message</a>.
+      </alert>
+      <alert type="info">
+        Heads up! This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+      </alert>
+      <alert type="warning">
+        Warning! Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.
+      </alert>
+      <alert type="danger">
+        Oh snap! <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+      </alert>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Additional content</h2>
+      <small class="card-subtitle">Alerts can also contain additional HTML elements like headings and paragraphs.</small>
+    </div>
+
+    <div class="card-block">
+      <alert type="success">
+        <h4 class="alert-heading">Well done!</h4>
+        <p class="mb-0">Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+      </alert>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Dismissing</h2>
+      <small class="card-subtitle">Alerts have <code>dismiss</code> option. Enabling it will show close button to the right of the alert.</small>
+    </div>
+
+    <div class="card-block">
+      <alert type="success" dismissible="true">
+        Well done! You successfully read <a href="#" class="alert-link">this important alert message</a>.
+      </alert>
+      <alert type="info" dismissible="true">
+        Heads up! This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+      </alert>
+      <alert type="warning" dismissible="true">
+        Warning! Better check yourself, you're <a href="#" class="alert-link">not looking too good</a>.
+      </alert>
+      <alert type="danger" dismissible="true">
+        Oh snap! <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+      </alert>
+    </div>
+  </div>
+</section>

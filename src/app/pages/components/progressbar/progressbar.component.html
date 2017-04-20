@@ -1,0 +1,25 @@
+<section class="content">
+  <header class="content__title">
+    <h1>Progressbar</h1>
+    <small>Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.</small>
+
+    <div class="actions">
+      <a class="actions__item zmdi zmdi-trending-up" [routerLink]="['/components/progressbar']"></a>
+      <a class="actions__item zmdi zmdi-check-all" [routerLink]="['/components/progressbar']"></a>
+      <div dropdown>
+        <i dropdownToggle class="actions__item zmdi zmdi-more-vert"></i>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right">
+          <a [routerLink]="['/components/progressbar']" class="dropdown-item">Refresh</a>
+          <a [routerLink]="['/components/progressbar']" class="dropdown-item">Manage Widgets</a>
+          <a [routerLink]="['/components/progressbar']" class="dropdown-item">Settings</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="card-block">
+      Coming soon!
+    </div>
+  </div>
+</section>

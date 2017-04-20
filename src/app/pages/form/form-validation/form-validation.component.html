@@ -1,0 +1,71 @@
+<section class="content">
+  <header class="content__title">
+    <h1>Form Validation States</h1>
+
+    <div class="actions">
+      <a class="actions__item zmdi zmdi-trending-up" [routerLink]="['/form/form-validation']"></a>
+      <a class="actions__item zmdi zmdi-check-all" [routerLink]="['/form/form-validation']"></a>
+      <div dropdown>
+        <i dropdownToggle class="actions__item zmdi zmdi-more-vert"></i>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right">
+          <a [routerLink]="['/form/form-validation']" class="dropdown-item">Refresh</a>
+          <a [routerLink]="['/form/form-validation']" class="dropdown-item">Manage Widgets</a>
+          <a [routerLink]="['/form/form-validation']" class="dropdown-item">Settings</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="card-block">
+      <p>Bootstrap includes validation styles for danger, warning, and success states on most form controls.</p>
+
+      <br>
+
+      <div class="form-group has-success">
+        <label class="form-control-label">Input with success</label>
+        <input type="text" class="form-control form-control-success" value="Vestibulum ante ipsum primis in faucibus orci luctus">
+        <i class="form-group__bar"></i>
+      </div>
+
+      <div class="form-group has-warning">
+        <label class="form-control-label">Input with warning</label>
+        <input type="text" class="form-control form-control-warning" value="Duis at suscipit nibh. Sed nec libero non">
+        <i class="form-group__bar"></i>
+      </div>
+
+      <div class="form-group has-danger">
+        <label class="form-control-label">Input with danger</label>
+        <input type="text" class="form-control form-control-danger" value="Nam et eleifend massa. Cum sociis natoque penatibus">
+      </div>
+
+      <br>
+
+      <div class="has-success">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Checkbox with success</span>
+        </label>
+      </div>
+
+      <div class="has-warning">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Checkbox with warning</span>
+        </label>
+      </div>
+
+      <div class="has-danger">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Checkbox with danger</span>
+        </label>
+      </div>
+
+
+    </div>
+  </div>
+</section>

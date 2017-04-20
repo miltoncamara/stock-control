@@ -1,0 +1,161 @@
+<section class="content">
+  <header class="content__title">
+    <h1>Date Picker</h1>
+    <small>Datepicker is a highly configurable component that adds datepicker functionality to your pages. You can customize the date format and language, restrict the selectable date ranges.</small>
+
+    <div class="actions">
+      <a class="actions__item zmdi zmdi-trending-up" [routerLink]="['/components/datepicker']"></a>
+      <a class="actions__item zmdi zmdi-check-all" [routerLink]="['/components/datepicker']"></a>
+      <div dropdown>
+        <i dropdownToggle class="actions__item zmdi zmdi-more-vert"></i>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+          <a [routerLink]="['/components/datepicker']" class="dropdown-item">Refresh</a>
+          <a [routerLink]="['/components/datepicker']" class="dropdown-item">Manage Widgets</a>
+          <a [routerLink]="['/components/datepicker']" class="dropdown-item">Settings</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Basic examples</h2>
+    </div>
+
+    <div class="card-block">
+
+      <div class="demo-inline-wrapper">
+        <h3 class="card-block__title">Basic</h3>
+        <p>Basic example with least options enabled.</p>
+
+        <br>
+
+        <datepicker [(ngModel)]="datePickerValue" [showWeeks]="false" class="datepicker datepicker--inline"></datepicker>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <input type="text" class="form-control" value="{{ getDate() | date:'dd/MM/yyyy'}}">
+          <i class="form-group__bar"></i>
+        </div>
+      </div>
+
+      <div class="demo-inline-wrapper">
+        <h3 class="card-block__title">Basic with visible weeks</h3>
+        <p>You can toggle the visiblity of the week using option <code>[showWeeks]</code>.</p>
+
+        <br>
+
+        <datepicker [(ngModel)]="datePickerValue" [showWeeks]="true" class="datepicker datepicker--inline"></datepicker>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <input type="text" class="form-control" value="{{ getDate() | date:'dd/MM/yyyy'}}">
+          <i class="form-group__bar"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Color variants</h2>
+      <small class="card-subtitle">Use the available modifier classes to switch custom headers.</small>
+    </div>
+
+    <div class="card-block">
+      <div class="demo-inline-wrapper">
+        <datepicker [(ngModel)]="datePickerValue" [showWeeks]="false" class="datepicker datepicker--inline datepicker--red"></datepicker>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <input type="text" class="form-control" value="{{ getDate() | date:'dd/MM/yyyy'}}">
+          <i class="form-group__bar"></i>
+        </div>
+      </div>
+
+      <div class="demo-inline-wrapper">
+        <datepicker [(ngModel)]="datePickerValue" [showWeeks]="false" class="datepicker datepicker--inline datepicker--blue"></datepicker>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <input type="text" class="form-control" value="{{ getDate() | date:'dd/MM/yyyy'}}">
+          <i class="form-group__bar"></i>
+        </div>
+      </div>
+
+      <div class="demo-inline-wrapper">
+        <datepicker [(ngModel)]="datePickerValue" [showWeeks]="false" class="datepicker datepicker--inline datepicker--amber"></datepicker>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <input type="text" class="form-control" value="{{ getDate() | date:'dd/MM/yyyy'}}">
+          <i class="form-group__bar"></i>
+        </div>
+      </div>
+
+      <div class="demo-inline-wrapper">
+        <datepicker [(ngModel)]="datePickerValue" [showWeeks]="false" class="datepicker datepicker--inline datepicker--green"></datepicker>
+
+        <br>
+        <br>
+
+        <div class="form-group">
+          <input type="text" class="form-control" value="{{ getDate() | date:'dd/MM/yyyy'}}">
+          <i class="form-group__bar"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Popup Examples</h2>
+      <small class="card-subtitle">Popup Datepickers made possible with Bootstrap's dropdown component.</small>
+    </div>
+
+    <div class="card-block">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6">
+          <h3 class="card-block__title">Default</h3>
+
+          <div class="form-group">
+            <input type="text" value="{{ getDate() | date:'dd/MM/yyyy'}}" class="form-control" (click)="toggleDatePicker(1)" />
+            <i class="form-group__bar"></i>
+
+            <div class="datepicker--popup" [class.datepicker--toggled]="datePickerToggle[1]">
+              <datepicker [(ngModel)]="datePickerValue" [showWeeks]="false" class="datepicker"></datepicker>
+
+              <button class="datepicker__close" (click)="toggleDatePicker(1)">Close</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h3 class="card-block__title">Up variant</h3>
+
+          <div class="form-group">
+            <input type="text" value="{{ getDate() | date:'dd/MM/yyyy'}}" class="form-control" (click)="toggleDatePicker(2)" />
+            <i class="form-group__bar"></i>
+
+            <div class="datepicker--popup datepicker--popup--alt" [class.datepicker--toggled]="datePickerToggle[2]">
+              <datepicker [(ngModel)]="datePickerValue" [showWeeks]="false" class="datepicker"></datepicker>
+
+              <button class="datepicker__close" (click)="toggleDatePicker(2)">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

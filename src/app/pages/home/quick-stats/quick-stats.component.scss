@@ -1,0 +1,56 @@
+// Import Bootstrap and App variables and mixins
+@import "../../../../assets/scss/inner-imports";
+
+
+.quick-stats__item {
+  padding: 1.5rem 1.5rem 1.45rem;
+  @include clearfix();
+  border-radius: $border-radius;
+  box-shadow: $card-shadow;
+  margin-bottom: $grid-gutter-width-base;
+  display: flex;
+  align-items: baseline;
+}
+
+.quick-stats__item--purple { background-color: $purple; }
+.quick-stats__item--red { background-color: $red; }
+.quick-stats__item--blue { background-color: $light-blue; }
+.quick-stats__item--amber { background-color: $amber; }
+
+.quick-stats__chart,
+.quick-stats__info {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.quick-stats__info {
+  min-width: 0;
+
+  & > h2,
+  & > small {
+    line-height: 100%;
+    @include text-truncate();
+  }
+
+  & > h2 {
+    font-weight: normal;
+    margin: 0;
+    font-size: 1.6rem;
+    color: $white;
+  }
+
+  & > small {
+    font-size: 1rem;
+    display: block;
+    color: rgba($white, 0.8);
+    margin-top: 0.6rem;
+  }
+}
+
+.quick-stats__chart {
+  margin-right: 1.1rem;
+
+  @include media-breakpoint-between(sm, lg) {
+    display: none;
+  }
+}

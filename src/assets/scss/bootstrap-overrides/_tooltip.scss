@@ -1,0 +1,5 @@
+.tooltip {
+  font-size: 0.95rem;
+  font-weight: 500;
+  @include animate(zoomIn, 150ms);
+}

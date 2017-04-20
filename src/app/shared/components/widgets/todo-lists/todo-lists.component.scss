@@ -1,0 +1,36 @@
+// Import Bootstrap and App variables and mixins
+@import "../../../../../assets/scss/inner-imports";
+
+
+.widget-todo {
+  background-color: $amber;
+}
+
+.widget-todo__item {
+  padding-left: 50px;
+  display: block;
+
+  small {
+    display: block;
+    font-size: 0.95rem;
+    margin-top: 0.2rem;
+    color: rgba($white, 0.9);
+  }
+
+  .custom-control-input {
+    &:checked {
+      & ~ .widget-todo__info {
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .custom-control--char__helper {
+    &:before,
+    &:after,
+    & > i {
+      background-color: lighten($amber, 10%);
+    }
+  }
+}
+

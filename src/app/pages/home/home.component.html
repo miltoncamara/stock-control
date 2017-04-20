@@ -1,0 +1,50 @@
+<section class="content">
+    <header class="content__title">
+        <h1>Dashboard</h1>
+
+        <div class="actions">
+            <a class="actions__item zmdi zmdi-trending-up" [routerLink]="['/home']"></a>
+            <a class="actions__item zmdi zmdi-check-all" [routerLink]="['/home']"></a>
+            <div dropdown>
+                <i dropdownToggle class="actions__item zmdi zmdi-more-vert"></i>
+                <div *dropdownMenu class="dropdown-menu dropdown-menu-right">
+                    <a [routerLink]="['/home']" class="dropdown-item">Refresh</a>
+                    <a [routerLink]="['/home']" class="dropdown-item">Manage Widgets</a>
+                    <a [routerLink]="['/home']" class="dropdown-item">Settings</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <quick-stats></quick-stats>
+
+    <div class="row dashboard">
+        <div class="dashboard__column">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Sales Statistics</h2>
+                    <small class="card-subtitle">Vestibulum purus quam scelerisque, mollis nonummy metus</small>
+                </div>
+                <div class="card-block">
+                    <div flot [options]="salesStatChartOptions" [dataset]="salesStatChartData" [height]="200"></div>
+                </div>
+            </div>
+
+            <widget-past-days></widget-past-days>
+
+            <widget-random-post></widget-random-post>
+        </div>
+
+        <div class="dashboard__column">
+            <widget-visitors></widget-visitors>
+
+            <widget-pie-charts></widget-pie-charts>
+        </div>
+
+        <div class="dashboard__column">
+            <widget-recent-posts></widget-recent-posts>
+
+            <widget-todo-lists></widget-todo-lists>
+        </div>
+    </div>
+</section>

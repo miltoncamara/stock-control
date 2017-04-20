@@ -1,0 +1,24 @@
+// Import Bootstrap and App variables and mixins
+@import "../../../../../assets/scss/inner-imports";
+
+
+.widget-pictures__body {
+  padding: 0 2px 1px;
+  text-align: center;
+  @include clearfix();
+
+  & > a {
+    display: inline-block;
+    padding: 0 2px 3px;
+    width: 33.33333%;
+
+    img {
+      width: 100%;
+      border-radius: $border-radius;
+    }
+
+    &:hover {
+      @include opacity(0.9);
+    }
+  }
+}
