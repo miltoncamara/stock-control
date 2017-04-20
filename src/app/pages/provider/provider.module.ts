@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TextMaskModule } from 'angular2-text-mask';
@@ -15,6 +16,7 @@ const PROVIDER_ROUTES = [
     ],
     imports: [
         CommonModule,
+        FormsModule,
         RouterModule.forChild(PROVIDER_ROUTES)
     ]
 })

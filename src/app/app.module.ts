@@ -8,6 +8,19 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { SharedService } from "./shared/services/shared.service";
 
+import { AngularFireModule } from 'angularfire2';
+
+import { FirebaseDataService } from './providers/firebase.provider';
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyBjmMrBeBNp7BvOmjaiiQ0BVUL1v1DftzA",
+    authDomain: "sg-controle-de-estoque.firebaseapp.com",
+    databaseURL: "https://sg-controle-de-estoque.firebaseio.com",
+    projectId: "sg-controle-de-estoque",
+    storageBucket: "sg-controle-de-estoque.appspot.com",
+    messagingSenderId: "415254352630"
+};
+
 @NgModule({
     declarations: [
         AppComponent
@@ -16,9 +29,11 @@ import { SharedService } from "./shared/services/shared.service";
         BrowserModule,
         FormsModule,
         HttpModule,
-        routing
+        routing,
+        AngularFireModule.initializeApp(firebaseConfig)
     ],
     providers: [
+        FirebaseDataService,
         SharedService,
         {
             provide: LocationStrategy,
