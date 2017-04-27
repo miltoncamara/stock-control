@@ -1,0 +1,59 @@
+<section class="content">
+    <header class="content__title">
+        <h1>Produtos</h1>
+
+        <!--<div class="actions">
+  <a class="actions__item zmdi zmdi-trending-up" [routerLink]="['/form/form-elements']"></a>
+      <a class="actions__item zmdi zmdi-check-all" [routerLink]="['/form/form-elements']"></a>
+      <div dropdown>
+        <i dropdownToggle class="actions__item zmdi zmdi-more-vert"></i>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+          <a [routerLink]="['/form/form-elements']" class="dropdown-item">Refresh</a>
+          <a [routerLink]="['/form/form-elements']" class="dropdown-item">Manage Widgets</a>
+          <a [routerLink]="['/form/form-elements']" class="dropdown-item">Settings</a>
+        </div>
+        
+      </div>
+    </div>-->
+    </header>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Cadastro de Produtos</h2>
+            <small class="card-subtitle">* Campos obrigatórios</small>
+        </div>
+
+        <div class="card-block">
+            <form [formGroup]="productForm">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group form-group--select">
+                            <div class="select">
+                                <select class="form-control" formControlName="productType">
+                                    <option value="">Tipo de Medida</option>
+                                    <option>Caixa</option>
+                                    <option>Pacote</option>
+                                    <option>Litro</option>
+                                    <option>Unidade</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-lg" formControlName="productName" placeholder="* Nome do Produto">
+                            <i class="form-group__bar"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" (click)="save()" class="btn btn-primary" [disabled]="!productForm.valid">Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

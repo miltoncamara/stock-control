@@ -10,6 +10,9 @@ const LAYOUT_ROUTES: Routes = [
         // Providers
         { path: 'provider', loadChildren: '../pages/provider/provider.module#ProviderModule' },
 
+        // Products
+        { path: 'product', loadChildren: '../pages/product/product.module#ProductModule' },        
+
         // Typography
         { path: 'typography', loadChildren: '../pages/typography/typography.module#TypographyModule' },
 

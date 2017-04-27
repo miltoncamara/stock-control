@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { FirebaseDataService } from '../../providers/firebase.provider';
 import { FirebaseListObservable } from "angularfire2";
 
@@ -10,20 +11,18 @@ import { FirebaseListObservable } from "angularfire2";
   ]
 })
 export class ProviderComponent implements OnInit {
-  public nomeFantasia: string;
-  public razaoSocial: string;
-  public cep: string;
-  public endereco: string;
-  public cidade: string;
-  public providers: FirebaseListObservable<any>
+  public providerForm: FormGroup;
 
-  constructor(public afService: FirebaseDataService) 
-  {
-    this.providers = this.afService.providers;
-  }
+  constructor(private fb: FormBuilder) {
+    //this.providers = this.afService.providers;
 
-   save(){
-    this.afService.save(this.razaoSocial, this.nomeFantasia, this.endereco, this.cidade, this.cep);
+    this.providerForm = this.fb.group({
+      nomeFantasia: ['', Validators.compose([Validators.required])],
+      razaoSocial: ['', Validators.compose([Validators.required])],
+      cep: ['', Validators.compose([Validators.required])],
+      endereco: ['', Validators.compose([Validators.required])],
+      cidade: ['', Validators.compose([Validators.required])]
+    });
   }
 
   ngOnInit() { }

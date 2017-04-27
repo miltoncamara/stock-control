@@ -4,22 +4,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TextMaskModule } from 'angular2-text-mask';
 
-import { ProviderComponent } from "./provider.component";
+import { ProductComponent } from "./product.component";
 
-const PROVIDER_ROUTES = [
-    { path: '', component: ProviderComponent }
+const PRODUCT_ROUTES = [
+    { path: '', component: ProductComponent }
 ];
 
 @NgModule ({
     declarations: [
-        ProviderComponent
+        ProductComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterModule.forChild(PROVIDER_ROUTES)
+        RouterModule.forChild(PRODUCT_ROUTES)
     ]
 })
 
-export class ProviderModule {  }
+export class ProductModule {  }

@@ -25,53 +25,47 @@
 
         <div class="card-block">
             <!--<h3 class="card-block__title">Dados Cadastrais</h3>-->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" [(ngModel)]="nomeFantasia" placeholder="* Razão Social">
-                        <i class="form-group__bar"></i>
+            <form [formGroup]="providerForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-lg" formControlName="nomeFantasia" placeholder="* Razão Social">
+                            <i class="form-group__bar"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-lg" formControlName="razaoSocial" placeholder="* Razão Social">
+                            <i class="form-group__bar"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" [(ngModel)]="razaoSocial" placeholder="* Nome Fantasia">
-                        <i class="form-group__bar"></i>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-lg" formControlName="cep" placeholder="Cep">
+                            <i class="form-group__bar"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-lg" formControlName="endereco" placeholder="Endereço">
+                            <i class="form-group__bar"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-lg" formControlName="cidade" placeholder="Cidade">
+                            <i class="form-group__bar"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" [(ngModel)]="cep" placeholder="Cep">
-                        <i class="form-group__bar"></i>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" (click)="save()" class="btn btn-primary" [disabled]="!providerForm.valid">Salvar</button>
                     </div>
                 </div>
-                <div class="col-md-7">
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" [(ngModel)]="endereco" placeholder="Endereço">
-                        <i class="form-group__bar"></i>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-lg" [(ngModel)]="cidade" placeholder="Cidade">
-                        <i class="form-group__bar"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="button" (click)="save()" class="btn btn-primary">Salvar</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <ul *ngFor="let item of providers | async">
-                        <li>{{ item.nomeFantasia }}</li>
-                        <li>{{ item.razaoSocial }}</li>
-                    </ul>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </section>
